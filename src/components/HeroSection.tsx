@@ -124,13 +124,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Right Mockup Controls */}
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 text-slate-400">
-                  <div className="p-1.5 rounded-full hover:bg-white/5 cursor-pointer">
+                  <button type="button" aria-label="Search" className="p-1.5 rounded-full hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <Search className="w-4 h-4" />
-                  </div>
-                  <div className="relative p-1.5 rounded-full hover:bg-white/5 cursor-pointer">
+                  </button>
+                  <button type="button" aria-label="Notifications" className="relative p-1.5 rounded-full hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <Bell className="w-4 h-4" />
                     <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-blue-500"></span>
-                  </div>
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2 pl-2 border-l border-white/10">
