@@ -7,8 +7,8 @@ export const FoundationCards: React.FC = () => {
   const cards = [
     {
       id: 'insights',
-      title: 'Insights',
-      description: 'Identify patterns, cut through the noise, and speed up response times.',
+      title: 'Call Analytics',
+      description: 'Track exactly how many missed calls were recovered into booked jobs.',
       icon: BarChart3,
       isSpecial: false,
       rotation: '-rotate-2',
@@ -16,8 +16,8 @@ export const FoundationCards: React.FC = () => {
     },
     {
       id: 'catalog',
-      title: 'Catalog',
-      description: 'Access the right and relevant context for your team instantly.',
+      title: 'Transcripts',
+      description: 'Access the full audio and transcript of every customer interaction instantly.',
       icon: FileText,
       isSpecial: false,
       rotation: 'rotate-2',
@@ -25,17 +25,17 @@ export const FoundationCards: React.FC = () => {
     },
     {
       id: 'integrations',
-      title: 'Integrations',
-      description: 'Bring together the tools you already use and take action from one place.',
+      title: 'CRM Integrations',
+      description: 'Syncs directly with ServiceTitan, Jobber, Housecall Pro, and Google Calendar.',
       icon: ArrowDown,
-      isSpecial: true, // Marked with vibrant blue background in screenshot
+      isSpecial: true,
       rotation: '-rotate-1',
       badgeGradient: 'from-blue-400 to-blue-600'
     },
     {
       id: 'workflows',
-      title: 'Workflows',
-      description: 'Automate incident handling and maintain consistency at scale.',
+      title: 'Automated Dispatch',
+      description: 'Routes emergency plumbing or HVAC calls directly to your on-call tech.',
       icon: GitFork,
       isSpecial: false,
       rotation: 'rotate-1',
@@ -43,8 +43,8 @@ export const FoundationCards: React.FC = () => {
     },
     {
       id: 'ai',
-      title: 'AI',
-      description: 'Intelligence, context, and power at the heart of every incident.',
+      title: 'Conversational AI',
+      description: 'Voices that sound human, speak Spanish, and know your pricing model.',
       icon: Sparkles,
       isSpecial: false,
       rotation: '-rotate-2',

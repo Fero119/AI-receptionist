@@ -68,13 +68,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-white drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]">
-              Act fast
+              Never miss a lead
             </span>{' '}
-            when challenges arise
+            while you're on the job
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
-            Complete AI phone intake, bilingual emergency triage, and instant appointment booking—tailored for modern US contractors.
+            The bilingual AI receptionist for US contractors. It answers instantly, triages emergencies, and books estimates directly into your calendar 24/7.
           </p>
 
           {/* Action Button Row */}
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               onClick={onOpenSignUp}
               className="px-7 py-3.5 rounded-full text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-500 backdrop-blur-md transition-all shadow-lg cursor-pointer"
             >
-              Try it free
+              Get started
             </button>
           </div>
         </div>

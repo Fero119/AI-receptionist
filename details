@@ -1,0 +1,50 @@
+# AI Receptionist Agency - Business & Architecture Spec
+
+## 1. Executive Summary & USP
+A white-glove agency providing AI-powered virtual receptionists for US-based contractors (plumbers, roofers, HVAC, etc.). 
+**The Unique Selling Proposition (USP):** "A hyper-local, bilingual virtual assistant that guarantees you never miss an emergency or a high-ticket lead, and follows up instantly via text if you're on a job."
+
+## 2. Target Audience (The Customer)
+- **Who:** US Contractors and appointment-based home service businesses.
+- **Pain Points:** Missed calls equal missed revenue. When they are on a ladder or under a sink, they can't pick up the phone. Homeowners usually call the next contractor on Google/Yelp if the first doesn't answer.
+- **Needs:** Immediate lead capture, emergency triage, appointment booking, and a trustworthy, local-sounding brand voice (bilingual: English & Spanish).
+
+## 3. Business Model
+- **White-Glove Service:** The agency handles 100% of the technical setup. The contractor does not need to learn new software.
+- **Pricing Structure:** 
+  - **Month 1:** Onboarding & Setup Fee (Covers Twilio number purchase, AI prompt engineering tailored to their business, calendar integration).
+  - **Ongoing:** Monthly Retainer (Covers AI usage minutes, server hosting, dashboard access, and continuous optimization).
+
+## 4. Tech Stack (Custom Code Approach)
+- **Frontend & Backend:** Next.js (React)
+- **Database & Auth:** Supabase (PostgreSQL for relational data, authentication for client logins)
+- **Voice AI Engine:** Vapi.ai or Retell AI (Wraps ElevenLabs for voice and OpenAI for conversational logic)
+- **Telephony & SMS:** Twilio
+- **Hosting:** Vercel
+
+## 5. Core Features
+### A. The AI Receptionist
+- Picks up incoming calls instantly.
+- Speaks naturally in English or Spanish.
+- Identifies caller intent (Emergency vs. Routine Estimate).
+- Books appointments directly into the contractor's calendar.
+
+### B. SMS Fallback & Lead Capture
+- If the AI is busy or the call drops, Twilio triggers an automated SMS: *"Hi, this is [Contractor's] assistant. We are currently on a job. Is this an emergency or do you need an estimate?"*
+
+### C. Notifications
+- **Emergencies:** Immediate SMS/Push notification dispatched to the contractor.
+- **Routines:** End-of-day summary or real-time email of booked appointments.
+
+### D. The Dashboards
+- **Admin Dashboard (For You):** View all active clients, total minutes used, Twilio billing, and system health.
+- **Client Dashboard (For Contractors):** Secure login to view ROI. Metrics include: Total Calls Handled, Appointments Booked, Emergencies Triaged, and a log of call summaries.
+
+## 6. System Architecture & Data Flow
+1. **Inbound Call:** Homeowner calls the Twilio Number.
+2. **Voice AI:** Twilio routes the call to Vapi.ai via webhook.
+3. **Conversation:** Vapi.ai uses OpenAI to talk to the homeowner and ElevenLabs to generate human-like speech.
+4. **Data Capture:** Once the call ends, Vapi.ai sends a webhook containing the call transcript and summary to the Next.js API.
+5. **Database Entry:** Next.js saves the call record, metrics, and appointment status into the Supabase database.
+6. **Notification Routing:** Next.js checks if the summary contains an "emergency" flag. If yes, it triggers Twilio to text the contractor.
+7. **Client View:** The contractor logs into their Next.js/Supabase dashboard to see the updated metrics fetched directly from the database.

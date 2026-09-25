@@ -30,6 +30,7 @@ interface ClientDashboardProps {
   onSelectClient: (clientId: string) => void;
   onAddNewCall: (newCall: CallRecord) => void;
   onUpdateClientSettings: (updatedClient: ClientContractor) => void;
+  initialTab?: 'overview' | 'simulator' | 'calls' | 'calendar' | 'settings';
 }
 
 export const ClientDashboard: React.FC<ClientDashboardProps> = ({
@@ -38,13 +39,14 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({
   activeClientId,
   onSelectClient,
   onAddNewCall,
-  onUpdateClientSettings
+  onUpdateClientSettings,
+  initialTab = 'overview'
 }) => {
   const currentClient = clients.find(c => c.id === activeClientId) || clients[0];
   const clientCalls = calls.filter(c => c.contractorId === currentClient.id);
 
   // Tab navigation
-  const [activeTab, setActiveTab] = useState<'overview' | 'simulator' | 'calls' | 'calendar' | 'settings'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'simulator' | 'calls' | 'calendar' | 'settings'>(initialTab);
 
   // Call detail drawer
   const [selectedCall, setSelectedCall] = useState<CallRecord | null>(clientCalls[0] || null);

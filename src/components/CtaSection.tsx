@@ -43,8 +43,8 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
 
         {/* Subtitle from Images 7 & 8 */}
         <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10">
-          Ready to streamline your incident management? <br />
-          Schedule a call with our experts today
+          Stop missing calls and losing revenue. <br />
+          Experience our AI receptionist live in your browser today.
         </p>
 
         {/* Glowing Pill Button with Specular Shine from screenshot */}
@@ -54,9 +54,9 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
 
           <button
             onClick={onOpenDemo}
-            className="relative px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base tracking-wide shadow-[0_0_40px_rgba(59,130,246,0.8),inset_0_1px_2px_rgba(255,255,255,0.7)] transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center gap-2.5 mx-auto border border-blue-300/40"
+            className="relative px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base tracking-wide shadow-[0_0_40px_rgba(59,130,246,0.8),inset_0_1px_2px_rgba(255,255,255,0.7)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2.5 mx-auto border border-blue-300/40"
           >
-            <span>Book a demo.</span>
+            <span>Try the demo.</span>
             <Sparkles className="w-4 h-4 text-blue-100" />
           </button>
         </div>

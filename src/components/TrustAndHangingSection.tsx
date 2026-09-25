@@ -5,11 +5,11 @@ export const TrustAndHangingSection: React.FC = () => {
   const [activeTag, setActiveTag] = useState<string | null>('All systems stable');
 
   const tags = [
-    { id: 'tag-1', title: 'Proof or it\'s not real', detail: 'Audio recordings & transcripts logged instantly in Supabase' },
-    { id: 'tag-2', title: 'All systems stable', detail: '99.98% carrier uptime with dual Twilio & Vapi fallback' },
-    { id: 'tag-3', title: 'Perfect rhythm', detail: 'Sub-500ms voice response with natural conversational cadence' },
-    { id: 'tag-4', title: 'Fix pushed', detail: 'Instant SMS dispatch sent to technician on call in <2s' },
-    { id: 'tag-5', title: 'Incidents resolved', detail: 'Over 1,200 emergency calls captured and converted to revenue' },
+    { id: 'tag-1', title: 'Always On Call', detail: '24/7 coverage so you never miss a high-ticket job again' },
+    { id: 'tag-2', title: 'Bilingual Triage', detail: 'Fluent English & Spanish to capture a wider customer base' },
+    { id: 'tag-3', title: 'Direct Booking', detail: 'Books estimates directly into your Google Calendar' },
+    { id: 'tag-4', title: 'Emergency SMS', detail: 'Instantly texts your on-call tech when a pipe bursts' },
+    { id: 'tag-5', title: 'Lead Capture', detail: 'Automated SMS follow-up if the call drops' },
   ];
 
   return (
@@ -21,7 +21,7 @@ export const TrustAndHangingSection: React.FC = () => {
         {/* Logo Ticker from Image 2 */}
         <div className="mb-20 sm:mb-28">
           <p className="text-center text-xs uppercase tracking-widest text-slate-500 mb-8 font-mono">
-            Trusted by modern home service leaders & enterprise dispatchers
+            Trusted by leading home service contractors across the US
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 md:gap-20 text-slate-400 font-bold opacity-80">
@@ -64,14 +64,14 @@ export const TrustAndHangingSection: React.FC = () => {
             {/* Left Narrative Text */}
             <div className="lg:col-span-6 space-y-4">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-                Issues arise <br />
+                Missed calls mean <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-200 to-white">
-                  every day
+                  missed revenue
                 </span>
               </h2>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md pt-2">
-                Issues arise every day. Outages and missed calls are inevitable, but with the right approach, chaos isn&apos;t.
+                Every time you climb a ladder or go under a sink, you lose a lead to the next guy on Google. With the right AI approach, you capture them all.
               </p>
 
               <div className="pt-4 flex items-center gap-3 text-xs text-blue-400 font-mono">
@@ -96,58 +96,58 @@ export const TrustAndHangingSection: React.FC = () => {
                 <div className="absolute top-0 left-[35%] w-[1px] h-52 bg-gradient-to-b from-blue-400/40 via-indigo-500/60 to-blue-400"></div>
               </div>
 
-              {/* Tag 1: Proof or it's not real */}
+              {/* Tag 1 */}
               <div
-                onMouseEnter={() => setActiveTag('Proof or it\'s not real')}
+                onMouseEnter={() => setActiveTag('Always On Call')}
                 className="absolute top-10 left-[16%] -translate-x-1/2 cursor-pointer z-10 transition-all duration-300 hover:scale-105"
               >
                 <div className="relative px-3.5 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800/80 border border-blue-400/40 shadow-[0_0_15px_rgba(59,130,246,0.4)] text-[11px] font-medium text-blue-100 flex items-center gap-1.5 backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-300"></span>
-                  <span>Proof or it&apos;s not real</span>
+                  <span>Always On Call</span>
                 </div>
               </div>
 
-              {/* Tag 2: All systems stable */}
+              {/* Tag 2 */}
               <div
-                onMouseEnter={() => setActiveTag('All systems stable')}
+                onMouseEnter={() => setActiveTag('Bilingual Triage')}
                 className="absolute top-28 left-[38%] -translate-x-1/2 cursor-pointer z-20 transition-all duration-300 hover:scale-105"
               >
                 <div className="relative px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 border border-blue-300 shadow-[0_0_25px_rgba(59,130,246,0.6)] text-xs font-semibold text-white flex items-center gap-2 backdrop-blur-md">
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                  <span>All systems stable</span>
+                  <span>Bilingual Triage</span>
                 </div>
               </div>
 
-              {/* Tag 3: Perfect rhythm */}
+              {/* Tag 3 */}
               <div
-                onMouseEnter={() => setActiveTag('Perfect rhythm')}
+                onMouseEnter={() => setActiveTag('Direct Booking')}
                 className="absolute top-16 right-[12%] cursor-pointer z-10 transition-all duration-300 hover:scale-105"
               >
                 <div className="relative px-3.5 py-1.5 rounded-lg bg-slate-900/80 hover:bg-blue-950 border border-indigo-400/30 shadow-[0_0_15px_rgba(99,102,241,0.3)] text-[11px] font-medium text-indigo-200 flex items-center gap-1.5 backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                  <span>Perfect rhythm</span>
+                  <span>Direct Booking</span>
                 </div>
               </div>
 
-              {/* Tag 4: Fix pushed */}
+              {/* Tag 4 */}
               <div
-                onMouseEnter={() => setActiveTag('Fix pushed')}
+                onMouseEnter={() => setActiveTag('Emergency SMS')}
                 className="absolute bottom-16 right-[18%] cursor-pointer z-10 transition-all duration-300 hover:scale-105"
               >
                 <div className="relative px-3.5 py-1.5 rounded-lg bg-blue-950/90 hover:bg-blue-900 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.3)] text-[11px] font-medium text-blue-200 flex items-center gap-1.5 backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  <span>Fix pushed</span>
+                  <span>Emergency SMS</span>
                 </div>
               </div>
 
-              {/* Tag 5: Incidents resolved */}
+              {/* Tag 5 */}
               <div
-                onMouseEnter={() => setActiveTag('Incidents resolved')}
+                onMouseEnter={() => setActiveTag('Lead Capture')}
                 className="absolute bottom-6 left-[25%] cursor-pointer z-10 transition-all duration-300 hover:scale-105"
               >
                 <div className="relative px-3.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.2)] text-[11px] font-medium text-slate-200 flex items-center gap-1.5 backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  <span>Incidents resolved</span>
+                  <span>Lead Capture</span>
                 </div>
               </div>
             </div>

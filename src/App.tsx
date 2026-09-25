@@ -20,6 +20,7 @@ export default function App() {
   const [metrics, setMetrics] = useState<AgencyMetrics>(initialAgencyMetrics);
   const [webhooks, setWebhooks] = useState<WebhookLog[]>(initialWebhooks);
   const [activeClientId, setActiveClientId] = useState<string>(initialClients[0].id);
+  const [clientInitialTab, setClientInitialTab] = useState<'overview' | 'calls' | 'simulator' | 'calendar' | 'settings'>('overview');
 
   // Modals
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
@@ -161,6 +162,7 @@ export default function App() {
             clients={clients}
             calls={calls}
             activeClientId={activeClientId}
+            initialTab={clientInitialTab}
             onSelectClient={setActiveClientId}
             onAddNewCall={handleAddNewCall}
             onUpdateClientSettings={handleUpdateClientSettings}
@@ -192,6 +194,7 @@ export default function App() {
         onClose={() => setIsDemoModalOpen(false)}
         onGoToSimulator={() => {
           setIsDemoModalOpen(false);
+          setClientInitialTab('simulator');
           setCurrentRole('client');
         }}
       />

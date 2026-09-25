@@ -7,29 +7,29 @@ export const AiCoreSection: React.FC = () => {
   const modules = [
     {
       id: 0,
-      title: 'Response',
-      description: 'Manage incidents from start to finish',
+      title: 'Call Triage',
+      description: 'Manage estimates and emergencies from start to finish',
       contractorNote: 'Immediate bilingual phone pickup in under 1 second',
       icon: PhoneForwarded
     },
     {
       id: 1,
-      title: 'On-call',
-      description: 'Bring the right experts together',
+      title: 'On-call Dispatch',
+      description: 'Route the right technicians to the right jobs',
       contractorNote: 'Automatic SMS dispatch to on-duty technician with address & notes',
       icon: Users
     },
     {
       id: 2,
-      title: 'AI SRE',
-      description: 'Fix incidents faster with AI-powered support',
+      title: 'AI Receptionist',
+      description: 'Answer instantly with human-like conversational AI',
       contractorNote: 'Sub-500ms voice logic with ElevenLabs & OpenAI conversational triage',
       icon: Sparkles
     },
     {
       id: 3,
-      title: 'Status Pages',
-      description: 'Keep users informed in real time',
+      title: 'CRM Sync',
+      description: 'Keep your calendar and customer records updated in real time',
       contractorNote: 'Instant Google Calendar slot booking and customer SMS confirmations',
       icon: MessageSquareText
     }
@@ -48,10 +48,10 @@ export const AiCoreSection: React.FC = () => {
         {/* Title and Subtitle matching Image 3 */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Unified incident platform
+            Unified communication platform
           </h2>
           <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            From first alert to full resolution, equip your team with the tools to act fast, minimize disruptions, and keep customers informed.
+            From the first missed call to a booked estimate, equip your trade business with the tools to capture leads, dispatch techs, and keep homeowners informed.
           </p>
         </div>
 

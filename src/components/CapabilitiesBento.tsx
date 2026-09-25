@@ -127,13 +127,13 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
                 {/* Message 1 */}
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                   <div className="text-xs text-slate-300 font-light mb-1.5">
-                    &ldquo;The issue has been resolved. Service is back online - thank you.&rdquo;
+                    &ldquo;My AC just stopped working and it's 95 degrees out.&rdquo;
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-amber-400/20 text-[10px] text-amber-300 font-bold flex items-center justify-center">
                       N
                     </div>
-                    <span className="text-[11px] text-slate-400">Nick Wilson · nickyyy@gmail.com</span>
+                    <span className="text-[11px] text-slate-400">Nick Wilson · 123 Main St</span>
                   </div>
                 </div>
 
@@ -141,18 +141,18 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-300 text-[10px] font-semibold">
-                      Investigating
+                      Dispatching Tech
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500">INC-0000 · 7h 7m</span>
+                    <span className="text-[10px] font-mono text-slate-500">JOB-1042 · Today</span>
                   </div>
                   <div className="text-xs text-slate-300 font-light mb-1.5">
-                    &ldquo;Looks like the system&apos;s a bit slow right now&rdquo;
+                    &ldquo;We have a technician available at 2 PM. Should I book that for you?&rdquo;
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-purple-400/20 text-[10px] text-purple-300 font-bold flex items-center justify-center">
-                      E
+                      A
                     </div>
-                    <span className="text-[11px] text-slate-400">Elizabeth Belle · eliebelle@gmail.com</span>
+                    <span className="text-[11px] text-slate-400">AI Receptionist</span>
                   </div>
                 </div>
               </div>
@@ -171,11 +171,11 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
               </div>
 
               <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white mb-3 leading-snug">
-                AI SRE fixes issues like your best engineer - automatically.
+                Your AI Receptionist handles calls like your best dispatcher.
               </h3>
 
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mb-6">
-                Detects problems, suggests fixes, and restores systems fast. For contractors, it detects burst pipes, advises homeowners on shutoff valves, dispatches on-call technicians, and confirms calendar appointments.
+                Detects emergencies, gathers customer info, and books jobs directly into your CRM. It detects burst pipes, advises homeowners on shutoff valves, dispatches on-call technicians, and confirms calendar appointments—all without you picking up the phone.
               </p>
             </div>
 
