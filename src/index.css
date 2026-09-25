@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #05070f;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom Cosmic Glowing Rays & Beam Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes beamScan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes particleShimmer {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateY(0px) scale(0.8);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-12px) scale(1.2);
+  }
+}
+
+@keyframes circuitFlow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-particle-1 {
+  animation: particleShimmer 4s ease-in-out infinite;
+}
+
+.animate-particle-2 {
+  animation: particleShimmer 5.5s ease-in-out infinite 1.5s;
+}
+
+.animate-particle-3 {
+  animation: particleShimmer 7s ease-in-out infinite 3s;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(13, 18, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(14, 21, 44, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 134, 255, 0.25);
+  box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.2);
+}
+
+.glass-nav {
+  background: rgba(10, 15, 30, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Cosmic Spotlight Rays */
+.cosmic-spotlight {
+  background: radial-gradient(
+    circle at 50% 120%,
+    rgba(59, 130, 246, 0.35) 0%,
+    rgba(37, 99, 235, 0.18) 35%,
+    rgba(17, 24, 39, 0) 70%
+  );
+}
+
+.hero-god-rays {
+  background: radial-gradient(
+    ellipse at 50% -20%,
+    rgba(56, 114, 250, 0.35) 0%,
+    rgba(30, 58, 138, 0.15) 45%,
+    rgba(5, 7, 15, 0) 80%
+  );
+}
+
+/* Glow Pill Button */
+.btn-glow-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-primary:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+  box-shadow: 0 0 35px rgba(96, 165, 250, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

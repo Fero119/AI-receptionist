@@ -1,0 +1,6 @@
+{
+  "name": "ResqVoice | AI Receptionist Agency for US Contractors",
+  "description": "Hyper-local, bilingual AI virtual receptionists for US contractors. Instant emergency triage, calendar booking, SMS fallback, and white-glove setup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
