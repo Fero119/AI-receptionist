@@ -66,38 +66,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         {/* Top Headline Block matching Image 1 */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08] animate-fade-in-up">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-white drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]">
               Never miss a lead
             </span>{' '}
             while you're on the job
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8 animate-fade-in-up delay-100">
             The bilingual AI receptionist for US contractors. It answers instantly, triages emergencies, and books estimates directly into your calendar 24/7.
           </p>
 
           {/* Action Button Row */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up delay-200">
             <button
-              onClick={onOpenDemo}
-              className="btn-glow-primary px-8 py-3.5 rounded-full text-sm font-semibold text-white tracking-wide shadow-xl flex items-center gap-2 cursor-pointer group"
+              onClick={onOpenSignUp}
+              className="btn-glow-primary px-8 py-3.5 rounded-full text-sm font-semibold text-white tracking-wide shadow-xl flex items-center gap-2 cursor-pointer group hover:scale-[1.02] transition-transform"
             >
-              <span>Book a demo</span>
+              <span>Get started</span>
               <Sparkles className="w-4 h-4 text-blue-200 group-hover:rotate-12 transition-transform" />
             </button>
 
             <button
-              onClick={onOpenSignUp}
+              onClick={onOpenDemo}
               className="px-7 py-3.5 rounded-full text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-500 backdrop-blur-md transition-all shadow-lg cursor-pointer"
             >
-              Get started
+              Try Demo
             </button>
           </div>
         </div>
 
         {/* Hero Interactive Dashboard Mockup - Exact reproduction from Image 1 */}
-        <div className="relative mx-auto max-w-5xl rounded-3xl p-1 bg-gradient-to-b from-blue-500/25 via-white/10 to-transparent shadow-[0_20px_80px_-15px_rgba(0,0,0,0.9)]">
+        <div className="relative mx-auto max-w-5xl rounded-3xl p-1 bg-gradient-to-b from-blue-500/25 via-white/10 to-transparent shadow-[0_20px_80px_-15px_rgba(0,0,0,0.9)] animate-fade-in-up delay-500">
           <div className="relative rounded-[22px] bg-[#090d1a]/95 border border-white/10 backdrop-blur-xl p-5 sm:p-7 overflow-hidden text-slate-100">
             {/* Top Bar of the Mockup */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/5">

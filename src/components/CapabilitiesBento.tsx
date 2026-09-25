@@ -64,51 +64,14 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
             {/* Stardust glow backdrop */}
             <div className="absolute top-4 right-10 w-48 h-48 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-            {/* Mini Dashboard Window preview */}
-            <div className="relative rounded-2xl bg-[#0d142b] border border-white/10 p-5 shadow-2xl">
-              <div className="flex items-center justify-between pb-3 border-b border-white/5">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                  <span className="font-display font-semibold text-xs text-white">Resq.io Live Call Feed</span>
-                </div>
-                <span className="text-[11px] font-mono text-emerald-400">● REAL-TIME DISPATCH</span>
-              </div>
-
-              <div className="pt-4 space-y-3">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Denver Inbound Trunk #1</span>
-                  <span className="font-mono text-white">Twilio SIP: +1 (303) 747-9201</span>
-                </div>
-
-                {/* Simulated Audio Waveform Bar */}
-                <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
-                    <PhoneCall className="w-4 h-4 animate-pulse" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between text-[11px] mb-1.5">
-                      <span className="text-white font-medium">Caller: Evelyn Parker (Burst Pipe)</span>
-                      <span className="text-rose-400 font-bold uppercase text-[9px] px-1.5 py-0.5 rounded bg-rose-500/20">
-                        Emergency
-                      </span>
-                    </div>
-                    {/* Sound Bars */}
-                    <div className="flex items-center gap-1 h-3">
-                      {[30, 70, 95, 45, 80, 100, 60, 40, 85, 90, 50, 75, 95, 60, 30].map((h, i) => (
-                        <div
-                          key={i}
-                          className="w-1 bg-blue-400 rounded-full"
-                          style={{ height: `${h}%` }}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-[11px] text-slate-400 italic">
-                  &ldquo;Sarah (AI): I hear water running—do you know where your main shutoff valve is?&rdquo;
-                </div>
-              </div>
+            {/* Dashboard Mockup Image */}
+            <div className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden group">
+              <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"></div>
+              <img
+                src="/ai-dashboard-mockup.jpg"
+                alt="Contractor AI Dashboard Mockup"
+                className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
+              />
             </div>
           </div>
 

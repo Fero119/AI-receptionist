@@ -16,8 +16,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
   const [formData, setFormData] = useState({
     name: '',
     company: '',
-    phone: '',
-    date: 'Tomorrow at 10:00 AM'
+    email: ''
   });
 
   if (!isOpen) return null;
@@ -41,7 +40,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
               Demo Confirmed!
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto mb-6">
-              Our lead telephony architect will call you at {formData.phone} on {formData.date} with a personalized AI prompt for {formData.company}.
+              We've received your request. Our team will send a personalized AI demo for {formData.company} directly to {formData.email}.
             </p>
             <button
               onClick={() => {
@@ -64,10 +63,10 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             </div>
 
             <h3 className="font-display font-bold text-2xl text-white mb-2">
-              Book Your 1-on-1 Voice AI Demo
+              Request Demo Access
             </h3>
             <p className="text-xs text-slate-300 mb-6">
-              See how our virtual receptionist handles 24/7 emergencies, cuts missed call losses, and books jobs directly into your calendar.
+              See how our virtual receptionist handles 24/7 emergencies, cuts missed call losses, and books jobs directly into your calendar. Fill out the form to get your custom demo link.
             </p>
 
             <form
@@ -102,29 +101,15 @@ export const DemoModal: React.FC<DemoModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Phone Number to Call You</label>
+                <label className="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
                 <input
-                  type="text"
+                  type="email"
                   required
-                  placeholder="+1 (555) 234-5678"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white font-mono focus:outline-none focus:border-blue-500"
+                  placeholder="carlos@vanguard.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
                 />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Preferred Time</label>
-                <select
-                  value={formData.date}
-                  onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none"
-                >
-                  <option value="Tomorrow at 10:00 AM EST">Tomorrow at 10:00 AM EST</option>
-                  <option value="Tomorrow at 2:00 PM EST">Tomorrow at 2:00 PM EST</option>
-                  <option value="Wednesday at 11:30 AM EST">Wednesday at 11:30 AM EST</option>
-                  <option value="Thursday at 4:00 PM EST">Thursday at 4:00 PM EST</option>
-                </select>
               </div>
 
               <div className="pt-2 flex items-center justify-between">
@@ -143,7 +128,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                   type="submit"
                   className="btn-glow-primary px-6 py-2.5 rounded-xl text-xs font-semibold text-white shadow-lg cursor-pointer"
                 >
-                  Schedule Demo Call
+                  Request Demo Link
                 </button>
               </div>
             </form>
