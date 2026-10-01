@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Search, Bell, Sparkles, PhoneCall, ShieldAlert, CheckCircle2, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import Spline from '@splinetool/react-spline';
 
 interface HeroSectionProps {
   onOpenDemo: () => void;
@@ -52,11 +51,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Top ambient violet/blue glow cone */}
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[1200px] h-[750px] hero-god-rays opacity-90 blur-2xl"></div>
-        
-        {/* 3D Spline Background - Positioned to the side/behind */}
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen scale-150 transform-gpu md:scale-100 pointer-events-auto">
-          <Spline scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" />
-        </div>
 
         {/* Subtle diagonal light streaks */}
         <div className="absolute top-1/4 left-[-10%] w-[600px] h-[300px] bg-blue-600/10 -rotate-12 blur-3xl z-10"></div>
