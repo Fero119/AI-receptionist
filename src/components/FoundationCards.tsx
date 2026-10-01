@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BarChart3, FileText, ArrowDown, GitFork, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const FoundationCards: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -61,24 +62,34 @@ export const FoundationCards: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Title matching Images 5 & 6 */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
             Built on a solid foundation
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-lg mx-auto">
             Architected for zero latency, carrier-grade telephony, and bulletproof reliability when every second counts.
           </p>
-        </div>
+        </motion.div>
 
         {/* 5 Staggered Tilted Cards Layout from Images 5 & 6 */}
         <div className="flex flex-col items-center gap-6">
           {/* Top Row: 2 Cards (Insights & Catalog) */}
           <div className="flex flex-wrap justify-center gap-6 w-full max-w-3xl">
-            {cards.slice(0, 2).map((c) => {
+            {cards.slice(0, 2).map((c, i) => {
               const Icon = c.icon;
               const isHovered = hoveredCard === c.id;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
                   key={c.id}
                   onMouseEnter={() => setHoveredCard(c.id)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -101,18 +112,22 @@ export const FoundationCards: React.FC = () => {
                   <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
                     {c.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
           {/* Bottom Row: 3 Cards (Integrations [Blue Highlight], Workflows, AI) */}
           <div className="flex flex-wrap justify-center gap-6 w-full max-w-5xl">
-            {cards.slice(2, 5).map((c) => {
+            {cards.slice(2, 5).map((c, i) => {
               const Icon = c.icon;
               const isHovered = hoveredCard === c.id;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
                   key={c.id}
                   onMouseEnter={() => setHoveredCard(c.id)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -145,7 +160,7 @@ export const FoundationCards: React.FC = () => {
                   }`}>
                     {c.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Search, Bell, Sparkles, PhoneCall, ShieldAlert, CheckCircle2, ChevronRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import Spline from '@splinetool/react-spline';
 
 interface HeroSectionProps {
   onOpenDemo: () => void;
@@ -51,21 +53,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Top ambient violet/blue glow cone */}
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[1200px] h-[750px] hero-god-rays opacity-90 blur-2xl"></div>
         
+        {/* 3D Spline Background - Positioned to the side/behind */}
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen scale-150 transform-gpu md:scale-100 pointer-events-auto">
+          <Spline scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" />
+        </div>
+
         {/* Subtle diagonal light streaks */}
-        <div className="absolute top-1/4 left-[-10%] w-[600px] h-[300px] bg-blue-600/10 -rotate-12 blur-3xl"></div>
-        <div className="absolute top-1/3 right-[-10%] w-[600px] h-[300px] bg-indigo-600/10 rotate-12 blur-3xl"></div>
+        <div className="absolute top-1/4 left-[-10%] w-[600px] h-[300px] bg-blue-600/10 -rotate-12 blur-3xl z-10"></div>
+        <div className="absolute top-1/3 right-[-10%] w-[600px] h-[300px] bg-indigo-600/10 rotate-12 blur-3xl z-10"></div>
 
         {/* Scattered celestial particle dots */}
-        <div className="absolute top-28 left-[15%] w-1.5 h-1.5 rounded-full bg-blue-300 opacity-60 animate-particle-1"></div>
-        <div className="absolute top-44 right-[20%] w-2 h-2 rounded-full bg-cyan-200 opacity-70 animate-particle-2"></div>
-        <div className="absolute top-64 left-[30%] w-1 h-1 rounded-full bg-indigo-300 opacity-50 animate-particle-3"></div>
-        <div className="absolute top-80 right-[35%] w-1.5 h-1.5 rounded-full bg-blue-400 opacity-80 animate-particle-1"></div>
-        <div className="absolute top-96 left-[18%] w-2 h-2 rounded-full bg-white opacity-40 animate-particle-2"></div>
+        <div className="absolute top-28 left-[15%] w-1.5 h-1.5 rounded-full bg-blue-300 opacity-60 animate-particle-1 z-10"></div>
+        <div className="absolute top-44 right-[20%] w-2 h-2 rounded-full bg-cyan-200 opacity-70 animate-particle-2 z-10"></div>
+        <div className="absolute top-64 left-[30%] w-1 h-1 rounded-full bg-indigo-300 opacity-50 animate-particle-3 z-10"></div>
+        <div className="absolute top-80 right-[35%] w-1.5 h-1.5 rounded-full bg-blue-400 opacity-80 animate-particle-1 z-10"></div>
+        <div className="absolute top-96 left-[18%] w-2 h-2 rounded-full bg-white opacity-40 animate-particle-2 z-10"></div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pointer-events-none">
         {/* Top Headline Block matching Image 1 */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 pointer-events-auto"
+        >
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08] animate-fade-in-up">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-white drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]">
               Never miss a lead
@@ -94,10 +106,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Try Demo
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Hero Interactive Dashboard Mockup - Exact reproduction from Image 1 */}
-        <div className="relative mx-auto max-w-5xl rounded-3xl p-1 bg-gradient-to-b from-blue-500/25 via-white/10 to-transparent shadow-[0_20px_80px_-15px_rgba(0,0,0,0.9)] animate-fade-in-up delay-500">
+        <motion.div 
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto max-w-5xl rounded-3xl p-1 bg-gradient-to-b from-blue-500/25 via-white/10 to-transparent shadow-[0_20px_80px_-15px_rgba(0,0,0,0.9)] pointer-events-auto"
+        >
           <div className="relative rounded-[22px] bg-[#090d1a]/95 border border-white/10 backdrop-blur-xl p-5 sm:p-7 overflow-hidden text-slate-100">
             {/* Top Bar of the Mockup */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/5">
@@ -370,7 +387,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

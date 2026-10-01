@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, MessageSquare, Sparkles, CheckCircle2, PhoneCall } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface CapabilitiesBentoProps {
   onGoToClientDashboard: () => void;
@@ -17,19 +18,31 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Title matching Image 4 */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
             All-in-one platform capabilities
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
             Everything your trade business needs to operate 24/7 without hiring costly in-house dispatchers.
           </p>
-        </div>
+        </motion.div>
 
         {/* Bento Grid from Image 4 */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Top Left: Glowing Electric Blue Card */}
-          <div className="md:col-span-5 rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white relative overflow-hidden shadow-2xl shadow-blue-900/40 flex flex-col justify-between group">
+          <motion.div 
+            initial={{ opacity: 0, x: -30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="md:col-span-5 rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white relative overflow-hidden shadow-2xl shadow-blue-900/40 flex flex-col justify-between group"
+          >
             {/* Sparkle Particles from screenshot */}
             <div className="absolute top-10 right-8 w-2 h-2 rounded-full bg-white/70 animate-ping"></div>
             <div className="absolute bottom-16 right-16 w-1.5 h-1.5 rounded-full bg-cyan-200"></div>
@@ -57,10 +70,16 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Top Right: Tilted Perspective Mockup Card from Image 4 */}
-          <div className="md:col-span-7 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 relative overflow-hidden flex flex-col justify-center">
+          <motion.div 
+            initial={{ opacity: 0, x: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:col-span-7 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 relative overflow-hidden flex flex-col justify-center"
+          >
             {/* Stardust glow backdrop */}
             <div className="absolute top-4 right-10 w-48 h-48 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -73,10 +92,16 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
                 className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Left: Quick Issue Triage / Chat Card from Image 4 */}
-          <div className="md:col-span-6 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 flex flex-col justify-between">
+          <motion.div 
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="md:col-span-6 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 flex flex-col justify-between"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="font-display font-semibold text-lg text-white">
@@ -124,10 +149,16 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
             <div className="mt-6 pt-3 border-t border-white/5 text-xs text-blue-400 font-medium">
               Zero dropped leads: Instant SMS follows up if a contractor is under a sink.
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Right: AI SRE / AI Receptionist Card from Image 4 */}
-          <div className="md:col-span-6 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 flex flex-col justify-between">
+          <motion.div 
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="md:col-span-6 rounded-3xl p-6 sm:p-8 bg-[#090e1f] border border-white/10 flex flex-col justify-between"
+          >
             <div>
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
                 <Sparkles className="w-5 h-5" />
@@ -152,7 +183,7 @@ export const CapabilitiesBento: React.FC<CapabilitiesBentoProps> = ({
                 <span>Calendar Auto-Sync</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

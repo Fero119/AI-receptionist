@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, PhoneCall, Sparkles, CheckCircle2, Clock, Calendar } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -23,7 +24,12 @@ export const DemoModal: React.FC<DemoModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="w-full max-w-lg rounded-3xl glass-panel-glow p-6 sm:p-8 border border-blue-500/30 relative">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.3, type: "spring", bounce: 0.35 }}
+        className="w-full max-w-lg rounded-3xl glass-panel-glow p-6 sm:p-8 border border-blue-500/30 relative"
+      >
         <button
           onClick={onClose}
           className="absolute top-5 right-5 text-slate-400 hover:text-white p-1 cursor-pointer"
@@ -134,7 +140,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             </form>
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };

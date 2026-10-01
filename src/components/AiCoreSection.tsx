@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Cpu, PhoneForwarded, Users, Sparkles, MessageSquareText } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const AiCoreSection: React.FC = () => {
   const [activeModule, setActiveModule] = useState<number | null>(null);
@@ -46,24 +47,34 @@ export const AiCoreSection: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Title and Subtitle matching Image 3 */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
             Unified communication platform
           </h2>
           <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             From the first missed call to a booked estimate, equip your trade business with the tools to capture leads, dispatch techs, and keep homeowners informed.
           </p>
-        </div>
+        </motion.div>
 
         {/* 4 Cards and AI Processor Core from Image 3 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: 4 Modular Cards in a 2x2 grid */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
-            {modules.map((mod) => {
+            {modules.map((mod, i) => {
               const Icon = mod.icon;
               const isSelected = activeModule === mod.id;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   key={mod.id}
                   onMouseEnter={() => setActiveModule(mod.id)}
                   onMouseLeave={() => setActiveModule(null)}
@@ -85,7 +96,7 @@ export const AiCoreSection: React.FC = () => {
                     <Icon className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                     <span className="truncate">{mod.contractorNote}</span>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -152,7 +163,13 @@ export const AiCoreSection: React.FC = () => {
             </svg>
 
             {/* Glowing Sapphire Chip Processor matching Image 3 */}
-            <div className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 rounded-3xl bg-gradient-to-br from-blue-500 via-indigo-600 to-blue-700 p-1 shadow-[0_0_70px_rgba(59,130,246,0.65)] animate-float-slow">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, type: 'spring', bounce: 0.4 }}
+              className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 rounded-3xl bg-gradient-to-br from-blue-500 via-indigo-600 to-blue-700 p-1 shadow-[0_0_70px_rgba(59,130,246,0.65)] animate-float-slow"
+            >
               <div className="w-full h-full rounded-[22px] bg-gradient-to-tr from-[#142354] via-[#2242a3] to-[#406cee] p-5 flex flex-col items-center justify-center relative overflow-hidden border border-white/20">
                 {/* Specular Inner Glare */}
                 <div className="absolute -top-12 -left-12 w-28 h-28 rounded-full bg-white/30 blur-xl pointer-events-none"></div>
@@ -173,7 +190,7 @@ export const AiCoreSection: React.FC = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
